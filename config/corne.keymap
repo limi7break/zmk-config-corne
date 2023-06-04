@@ -5,11 +5,12 @@
 
 #define QWERTY 0
 #define SYMBOL 1
-#define NAV 2
+#define FNAV 2
 #define MACRO 3
 
 #define C_VOLU C_VOL_UP
 #define C_VOLD C_VOL_DN
+#define C_FILE C_AL_FILES
 
 / {
     macros {
@@ -110,7 +111,7 @@
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
         &kp LCTRL      &kp Z      &kp X      &kp C      &kp V      &kp B                               &kp N      &kp M  &kp COMMA    &kp DOT   &kp FSLH    &kp RET
     //|----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
-                                                     &kp LGUI   &kp LALT &mo SYMBOL       &mo NAV  &kp SPACE   &kp RSFT
+                                                     &kp LGUI   &kp LALT &mo SYMBOL      &mo FNAV  &kp SPACE   &kp RSFT
             >;                                  //`--------------------------------'  `--------------------------------'
         };
         symbol_layer {
@@ -125,14 +126,14 @@
                                                      &kp LGUI   &kp LALT     &trans     &mo MACRO  &kp SPACE   &kp RSFT
             >;                                  //`--------------------------------'  `--------------------------------'
         };
-        nav_layer {
+        fnav_layer {
             bindings = <
     //,-----------------------------------------------------------------.                        ,-----------------------------------------------------------------.
-          &kp ESC     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                              &kp F6     &kp F7     &kp F8     &kp F9    &kp F10    &kp DEL
+          &kp ESC     &kp F9    &kp F10    &kp F11    &kp F12      &none                          &kp C_PREV &kp C_VOLD &kp C_VOLU &kp C_NEXT   &kp C_PP    &kp DEL
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-        &kp LSHFT      &none &kp C_PREV &kp C_VOLU &kp C_VOLD &kp C_NEXT                            &kp LEFT   &kp DOWN     &kp UP  &kp RIGHT    &kp F11  &kp K_APP
+        &kp LSHFT     &kp F5     &kp F6     &kp F7     &kp F8      &none                            &kp LEFT   &kp DOWN     &kp UP  &kp RIGHT &kp C_MUTE  &kp K_APP
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-        &kp LCTRL      &none      &none &kp C_STOP &kp C_MUTE   &kp C_PP                            &kp HOME  &kp PG_DN  &kp PG_UP    &kp END    &kp F12    &kp RET
+        &kp LCTRL     &kp F1     &kp F2     &kp F3     &kp F4      &none                            &kp HOME  &kp PG_DN  &kp PG_UP    &kp END &kp C_STOP    &kp RET
     //|----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
                                                      &kp LGUI   &kp LALT  &mo MACRO        &trans  &kp SPACE   &kp RSFT
             >;                                  //`--------------------------------'  `--------------------------------'
@@ -140,11 +141,11 @@
         macro_layer {
             bindings = <
     //,-----------------------------------------------------------------.                        ,-----------------------------------------------------------------.
-          &kp ESC  &kp TILDE      &none   &IT_EGRV   &none    &bt BT_PRV                          &bt BT_NXT   &IT_UGRV   &IT_IGRV   &IT_OGRV      &none    &kp DEL
+          &kp ESC  &kp TILDE   &kp PIPE   &IT_EGRV   &none    &bt BT_PRV                          &bt BT_NXT   &IT_UGRV   &IT_IGRV   &IT_OGRV      &none    &kp DEL
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-        &kp LSHFT   &IT_AGRV      &none   &IT_EACT   &none    &bt BT_CLR                          &bt BT_CLR   &IT_UACT   &IT_IACT   &IT_OACT      &EQGT   &kp BSLH
+        &kp LSHFT   &IT_AGRV      &none   &IT_EACT   &none    &bt BT_CLR                          &bt BT_CLR   &IT_UACT   &IT_IACT   &IT_OACT      &EQGT &kp C_FILE
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-        &kp LCTRL   &IT_AACT      &none   &IT_EURO   &none    &out OUT_TOG                      &out OUT_TOG   &kp CAPS &kp KP_NUM   &kp SLCK      &none    &kp RET
+        &kp LCTRL   &IT_AACT      &none   &IT_EURO   &none    &out OUT_TOG                      &out OUT_TOG   &kp CAPS   &kp SLCK &kp KP_NUM      &none    &kp RET
     //|----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
                                                      &kp LGUI   &kp LALT     &trans        &trans  &kp SPACE   &kp RSFT
             >;                                  //`--------------------------------'  `--------------------------------'
