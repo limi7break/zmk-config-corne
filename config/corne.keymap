@@ -10,7 +10,6 @@
 
 #define C_VOLU C_VOL_UP
 #define C_VOLD C_VOL_DN
-#define C_FILE C_AL_FILES
 
 / {
     macros {
@@ -143,7 +142,7 @@
     //,-----------------------------------------------------------------.                        ,-----------------------------------------------------------------.
           &kp ESC  &kp TILDE   &kp PIPE   &IT_EGRV   &none    &bt BT_PRV                          &bt BT_NXT   &IT_UGRV   &IT_IGRV   &IT_OGRV      &none    &kp DEL
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
-        &kp LSHFT   &IT_AGRV      &none   &IT_EACT   &none    &bt BT_CLR                          &bt BT_CLR   &IT_UACT   &IT_IACT   &IT_OACT      &EQGT &kp C_FILE
+        &kp LSHFT   &IT_AGRV      &none   &IT_EACT   &none    &bt BT_CLR                          &bt BT_CLR   &IT_UACT   &IT_IACT   &IT_OACT      &EQGT      &none
     //|----------+----------+----------+----------+----------+----------|                        |----------+----------+----------+----------+----------+----------|
         &kp LCTRL   &IT_AACT      &none   &IT_EURO   &none    &out OUT_TOG                      &out OUT_TOG   &kp CAPS   &kp SLCK &kp KP_NUM      &none    &kp RET
     //|----------+----------+----------+----------+----------+----------+----------|  |----------+----------+----------+----------+----------+----------+----------|
