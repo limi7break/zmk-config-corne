@@ -99,6 +99,26 @@
             bindings = <&kp EQUAL &kp GT>;
         )
     };
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <40>;
+            key-positions = <15 16>;
+            bindings = <&kp ESC>;
+        };
+        combo_bspc {
+            timeout-ms = <40>;
+            key-positions = <19 20>;
+            layers = <0 1>;
+            bindings = <&kp BSPC>;
+        };
+        combo_del {
+            timeout-ms = <40>;
+            key-positions = <19 20>;
+            layers = <2 3>;
+            bindings = <&kp DEL>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
         qwerty_layer {
